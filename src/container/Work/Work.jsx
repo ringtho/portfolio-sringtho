@@ -1,7 +1,7 @@
 import React from 'react'
 import './Work.scss'
 
-function Work() {
+function Work () {
   return (
     <div>
       Work

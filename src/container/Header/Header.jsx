@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.scss'
 
-function Header() {
+function Header () {
   return (
     <div>
       Header

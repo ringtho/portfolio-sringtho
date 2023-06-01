@@ -1,7 +1,7 @@
 import React from 'react'
 import './Skills.scss'
 
-function Skills() {
+function Skills () {
   return (
     <div>
       Skills

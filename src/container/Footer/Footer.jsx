@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.scss'
 
-function Footer() {
+function Footer () {
   return (
     <div>
       Footer

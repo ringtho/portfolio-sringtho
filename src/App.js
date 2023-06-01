@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-function App() {
+function App () {
   return (
     <div className="App">
       Smith Ringtho
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

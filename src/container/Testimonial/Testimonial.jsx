@@ -1,7 +1,7 @@
 import React from 'react'
 import './Testimonial.scss'
 
-function Testimonial() {
+function Testimonial () {
   return (
     <div>
       Testimonial
