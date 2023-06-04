@@ -4,6 +4,7 @@ import './Footer.scss'
 import { images } from '../../constants'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { client } from '../../client'
+import { send } from 'emailjs-com'
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -17,6 +18,10 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value })
   }
 
+  console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID)
+  console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID)
+  console.log(process.env.REACT_APP_SANITY_PROJECT_ID)
+
   const handleSubmit = () => {
     setLoading(true)
 
@@ -26,6 +31,13 @@ const Footer = () => {
       email: formData.email,
       message: formData.message
     }
+
+    send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      contact,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
 
     client.create(contact)
       .then(() => {
@@ -62,7 +74,13 @@ const Footer = () => {
                   onChange={handleChangeInput} />
               </div>
               <div className="app__flex">
-                <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+                <input
+                  className="p-text"
+                  type="email"
+                  placeholder="Your Email"
+                  name="email" value={email}
+                  onChange={handleChangeInput}
+                />
               </div>
               <div>
                 <textarea
