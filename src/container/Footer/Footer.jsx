@@ -18,10 +18,6 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value })
   }
 
-  console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID)
-  console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID)
-  console.log(process.env.REACT_APP_SANITY_PROJECT_ID)
-
   const handleSubmit = () => {
     setLoading(true)
 
