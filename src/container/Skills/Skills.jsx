@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Skills.scss'
 import { motion } from 'framer-motion'
-import { AppWrap } from '../../wrapper'
+import { AppWrap, MotionWrap } from '../../wrapper'
 import { urlFor, client } from '../../client'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 
@@ -24,12 +24,9 @@ function Skills () {
       })
   }, [])
 
-  console.log(experience)
-
   return (
     <>
       <h2 className='head-text'>Skills & Experience</h2>
-
       <div className='app__skills-container'>
         <motion.div
           className='app__skills-list'
@@ -93,4 +90,8 @@ function Skills () {
   )
 }
 
-export default AppWrap(Skills, 'skills')
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  'app__whitebg'
+)
